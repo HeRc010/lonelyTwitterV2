@@ -2,10 +2,15 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
+import io.searchbox.annotations.JestId;
+
 /**
  * Created by romansky on 1/12/16.
  */
 public abstract class Tweet {
+    @JestId
+    protected String id;
+
     protected Date date;
     protected String message;
 
@@ -20,6 +25,14 @@ public abstract class Tweet {
     }
 
     public abstract Boolean isImportant();
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Date getDate() {
         return this.date;
